@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget{
           padding: EdgeInsets.zero,
           children: [
              UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.teal),
+              decoration: BoxDecoration(color: Colors.teal, borderRadius: BorderRadius.only(bottomRight: Radius.circular(40))),
               accountName: Text('Hello, Student!'),
               accountEmail: Text('flutter@example.com'),
               currentAccountPicture: Icon(Icons.person_off),
