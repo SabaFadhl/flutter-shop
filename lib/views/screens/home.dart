@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget{
         foregroundColor: Colors.teal,
         actions: [
           Padding(
-            padding:  EdgeInsets.only(right: 15),
+            padding: EdgeInsets.only(right: 15),
             child: Icon(Icons.search),
           ),
         ],
@@ -22,13 +22,13 @@ class HomeScreen extends StatelessWidget{
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(40),
                 ),
               ),
-              accountName:  Text(
+              accountName: Text(
                 'Hello, Student!',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -38,37 +38,30 @@ class HomeScreen extends StatelessWidget{
               ),
             ),
 
-
             ListTile(
-              leading:  Icon(Icons.home, color: Colors.teal),
-              title:  Text('Home'),
-
+              leading: Icon(Icons.home, color: Colors.teal),
+              title: Text('Home'),
             ),
 
             ListTile(
-              leading:  Icon(Icons.shopping_cart, color: Colors.teal),
-              title:  Text('My Cart'),
-
+              leading: Icon(Icons.shopping_cart, color: Colors.teal),
+              title: Text('My Cart'),
             ),
 
             ListTile(
-              leading:  Icon(Icons.favorite, color: Colors.teal),
-              title:  Text('Favorites'),
-
+              leading: Icon(Icons.favorite, color: Colors.teal),
+              title: Text('Favorites'),
             ),
 
             ListTile(
-              leading:  Icon(Icons.person, color: Colors.teal),
-              title:  Text('Profile'),
-
+              leading: Icon(Icons.person, color: Colors.teal),
+              title: Text('Profile'),
             ),
-            Divider(height: 400, endIndent: 40, color: Colors.white,),
+            Divider(height: 400, endIndent: 40, color: Colors.white),
             ListTile(
-
-              leading:  Icon(Icons.logout, color: Colors.red),
-              title:  Text('Logout', style: TextStyle(color: Colors.red)),
+              leading: Icon(Icons.logout, color: Colors.red),
+              title: Text('Logout', style: TextStyle(color: Colors.red)),
             ),
-
           ],
         ),
       ),
@@ -78,20 +71,24 @@ class HomeScreen extends StatelessWidget{
           children: [
             Container(
               color: Colors.teal[50],
-              padding:  EdgeInsets.all(15),
+              padding: EdgeInsets.all(15),
               child: Row(
                 children: [
-                   CircleAvatar(
+                  CircleAvatar(
                     backgroundImage: AssetImage('assets/icons/profile.jpg'),
                     radius: 25,
                   ),
-                   SizedBox(width: 10),
+                  SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children:  [
+                    children: [
                       Text(
                         'Welcome to Flutter Shop!',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.teal),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.teal,
+                        ),
                       ),
                       Text(
                         'Discover products and explore layouts',
@@ -99,8 +96,8 @@ class HomeScreen extends StatelessWidget{
                       ),
                     ],
                   ),
-                   Spacer(),
-                   Icon(Icons.notifications_none, color: Colors.teal),
+                  Spacer(),
+                  Icon(Icons.notifications_none, color: Colors.teal),
                 ],
               ),
             ),
@@ -109,12 +106,18 @@ class HomeScreen extends StatelessWidget{
               height: 60,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                padding:  EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  var categories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'];
+                  var categories = [
+                    'Category 1',
+                    'Category 2',
+                    'Category 3',
+                    'Category 4',
+                    'Category 5',
+                  ];
                   return Container(
-                    padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.teal[100],
                       borderRadius: BorderRadius.circular(15),
@@ -122,7 +125,7 @@ class HomeScreen extends StatelessWidget{
                     child: Center(
                       child: Text(
                         categories[index],
-                        style:  TextStyle(
+                        style: TextStyle(
                           color: Colors.teal,
                           fontWeight: FontWeight.w500,
                         ),
@@ -130,15 +133,115 @@ class HomeScreen extends StatelessWidget{
                     ),
                   );
                 },
-                separatorBuilder: (BuildContext context, int index) =>  SizedBox(width: 10),
+                separatorBuilder: (BuildContext context, int index) =>
+                    SizedBox(width: 10),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              child: ListView.separated(
+                shrinkWrap: true, // <— allow list to size itself
+                physics: const NeverScrollableScrollPhysics(), // <— disable its own scroll
+                scrollDirection: Axis.vertical,
+                padding: const EdgeInsets.all(10),
+                itemCount: 5,
+                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                itemBuilder: (context, index) {
+                  final items = [
+                    {
+                      'title': 'Friends’ Era',
+                      'image': 'assets/icons/friends.jpg',
+                      'desc':
+                      'The story of two friends, Romeo and Alfredo, in their struggle for survival and loyalty.',
+                    },
+                    {
+                      'title': 'Dragon Ball',
+                      'image': 'assets/icons/dragonball.jpg',
+                      'desc':
+                      'Goku’s adventures as he trains in martial arts and searches for the Dragon Balls.',
+                    },
+                    {
+                      'title': 'Captain Tsubasa',
+                      'image': 'assets/icons/tsubasa.jpg',
+                      'desc':
+                      'Tsubasa Ozora pursues his dream of becoming the best soccer player in the world.',
+                    },
+                    {
+                      'title': 'The Secret Garden',
+                      'image': 'assets/icons/garden.jpg',
+                      'desc':
+                      'Mary Lennox discovers a hidden magical garden that transforms her life and those around her.',
+                    },
+                    {
+                      'title': 'Sindbad',
+                      'image': 'assets/icons/sindbad.jpg',
+                      'desc':
+                      'The young sailor Sindbad embarks on daring adventures across the seas in search of treasure.',
+                    },
+                  ];
 
+                  final item = items[index];
+
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 180,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              topRight: Radius.circular(15),
+                            ),
+                            image: DecorationImage(
+                              image: AssetImage(item['image']!),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            item['title']!,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            item['desc']!,
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
 
           ],
         ),
       ),
-
     );
   }
 }
