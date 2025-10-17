@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget{
         foregroundColor: Colors.teal,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 15),
+            padding:  EdgeInsets.only(right: 15),
             child: Icon(Icons.search),
           ),
         ],
@@ -22,13 +22,13 @@ class HomeScreen extends StatelessWidget{
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(40),
                 ),
               ),
-              accountName: const Text(
+              accountName:  Text(
                 'Hello, Student!',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
@@ -65,13 +65,50 @@ class HomeScreen extends StatelessWidget{
             Divider(height: 400, endIndent: 40, color: Colors.white,),
             ListTile(
 
-              leading: const Icon(Icons.logout, color: Colors.red),
-              title: const Text('Logout', style: TextStyle(color: Colors.red)),
+              leading:  Icon(Icons.logout, color: Colors.red),
+              title:  Text('Logout', style: TextStyle(color: Colors.red)),
             ),
 
           ],
         ),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.teal[50],
+              padding:  EdgeInsets.all(15),
+              child: Row(
+                children: [
+                   CircleAvatar(
+                    backgroundImage: AssetImage('assets/icons/profile.jpg'),
+                    radius: 25,
+                  ),
+                   SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children:  [
+                      Text(
+                        'Welcome to Flutter Shop!',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.teal),
+                      ),
+                      Text(
+                        'Discover products and explore layouts',
+                        style: TextStyle(color: Colors.grey, fontSize: 13),
+                      ),
+                    ],
+                  ),
+                   Spacer(),
+                   Icon(Icons.notifications_none, color: Colors.teal),
+                ],
+              ),
+            ),
+
+          ],
+        ),
+      ),
+
     );
   }
 }
