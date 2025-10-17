@@ -5,12 +5,16 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 1,
         title: Text('Flutter Shop'),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.teal,
         actions: [
-          Icon(Icons.search)
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Icon(Icons.search),
+          ),
         ],
       ),
       drawer: Drawer(
