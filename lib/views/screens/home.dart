@@ -17,13 +17,23 @@ class HomeScreen extends StatelessWidget{
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-             UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.teal, borderRadius: BorderRadius.only(bottomRight: Radius.circular(40))),
-              accountName: Text('Hello, Student!'),
+            UserAccountsDrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.teal,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(40),
+                ),
+              ),
+              accountName: const Text(
+                'Hello, Student!',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               accountEmail: Text('flutter@example.com'),
-              currentAccountPicture: Icon(Icons.person_off),
-
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/icons/profile.jpg'),
+              ),
             ),
+
 
             ListTile(
               leading:  Icon(Icons.home, color: Colors.teal),
