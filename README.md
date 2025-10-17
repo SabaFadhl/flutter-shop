@@ -51,8 +51,8 @@ spacetoon_shop/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/spacetoon_shop.git
-cd spacetoon_shop
+git clone https://github.com/SabaFadhl/flutter-shop.git
+cd flutter-shop
 ```
 
 ### 2️⃣ Get dependencies
@@ -68,6 +68,10 @@ flutter run
 ---
 
 ## 🖼️ Screenshots
+
+
+https://github.com/user-attachments/assets/bb1f5983-f203-4de2-a8cd-dd0e64b36ea4
+
 
 
 ---
