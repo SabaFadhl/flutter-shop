@@ -104,6 +104,36 @@ class HomeScreen extends StatelessWidget{
                 ],
               ),
             ),
+            SizedBox(height: 10),
+            Container(
+              height: 60,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                padding:  EdgeInsets.symmetric(horizontal: 10),
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  var categories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'];
+                  return Container(
+                    padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.teal[100],
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Text(
+                        categories[index],
+                        style:  TextStyle(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) =>  SizedBox(width: 10),
+
+              ),
+            ),
 
           ],
         ),
