@@ -137,44 +137,42 @@ class HomeScreen extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Expanded(
-            child:
-            ListView.separated(
-
+            child: ListView.separated(
               scrollDirection: Axis.vertical,
-              padding:  EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
               itemCount: 5,
-              separatorBuilder: (_, __) =>  SizedBox(height: 10),
+              separatorBuilder: (_, __) => SizedBox(height: 10),
               itemBuilder: (context, index) {
                 final items = [
                   {
                     'title': 'Friends’ Era',
                     'image': 'assets/icons/friends.jpg',
                     'desc':
-                    'The story of two friends, Romeo and Alfredo, in their struggle for survival and loyalty.',
+                        'The story of two friends, Romeo and Alfredo, in their struggle for survival and loyalty.',
                   },
                   {
                     'title': 'Dragon Ball',
                     'image': 'assets/icons/dragonball.jpg',
                     'desc':
-                    'Goku’s adventures as he trains in martial arts and searches for the Dragon Balls.',
+                        'Goku’s adventures as he trains in martial arts and searches for the Dragon Balls.',
                   },
                   {
                     'title': 'Captain Tsubasa',
                     'image': 'assets/icons/tsubasa.jpg',
                     'desc':
-                    'Tsubasa Ozora pursues his dream of becoming the best soccer player in the world.',
+                        'Tsubasa Ozora pursues his dream of becoming the best soccer player in the world.',
                   },
                   {
                     'title': 'The Secret Garden',
                     'image': 'assets/icons/garden.jpg',
                     'desc':
-                    'Mary Lennox discovers a hidden magical garden that transforms her life and those around her.',
+                        'Mary Lennox discovers a hidden magical garden that transforms her life and those around her.',
                   },
                   {
                     'title': 'Sindbad',
                     'image': 'assets/icons/sindbad.jpg',
                     'desc':
-                    'The young sailor Sindbad embarks on daring adventures across the seas in search of treasure.',
+                        'The young sailor Sindbad embarks on daring adventures across the seas in search of treasure.',
                   },
                 ];
 
@@ -188,7 +186,7 @@ class HomeScreen extends StatelessWidget {
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.2),
                         blurRadius: 8,
-                        offset:  Offset(0, 3),
+                        offset: Offset(0, 3),
                       ),
                     ],
                   ),
@@ -201,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                             height: 180,
                             width: double.infinity,
                             decoration: BoxDecoration(
-                              borderRadius:  BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(15),
                                 topRight: Radius.circular(15),
                               ),
@@ -215,12 +213,15 @@ class HomeScreen extends StatelessWidget {
                             top: 8,
                             right: 8,
                             child: Container(
-                              padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 4,
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.teal,
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child:  Text(
+                              child: Text(
                                 '\$59.99',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -233,26 +234,23 @@ class HomeScreen extends StatelessWidget {
                       ),
 
                       Padding(
-                        padding:  EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           item['title']!,
-                          style:  TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
                         ),
                       ),
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 8.0),
+                        padding: EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text(
                           item['desc']!,
-                          style:  TextStyle(
-                            color: Colors.grey,
-                            fontSize: 13,
-                          ),
+                          style: TextStyle(color: Colors.grey, fontSize: 13),
                         ),
                       ),
-                       SizedBox(height: 10),
+                      SizedBox(height: 10),
                     ],
                   ),
                 );
@@ -263,26 +261,20 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,
-        onPressed: () {  },
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
-        items:  [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );
