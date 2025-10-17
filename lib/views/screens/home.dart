@@ -6,7 +6,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
-        title: Text('Flutter Shop'),
+        title: Text('Spacetoon Shop'),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.teal,
@@ -29,10 +29,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               accountName: Text(
-                'Hello, Student!',
+                'Hello, Romeo!',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              accountEmail: Text('flutter@example.com'),
+              accountEmail: Text('spacetoon@example.com'),
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/icons/profile.jpg'),
               ),
@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Welcome to Flutter Shop!',
+                      'Welcome to Spacetoon Shop!',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -105,15 +105,19 @@ class HomeScreen extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 10),
-              itemCount: 5,
+              itemCount: 8,
               itemBuilder: (context, index) {
                 var categories = [
-                  'Category 1',
-                  'Category 2',
-                  'Category 3',
-                  'Category 4',
-                  'Category 5',
+                  'Action Planet',
+                  'Comedy Planet',
+                  'Sports Planet',
+                  'Adventure Planet',
+                  'Science Planet',
+                  'Movies Planet',
+                  'Stories Planet',
+                  'Girls Planet',
                 ];
+
                 return Container(
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
