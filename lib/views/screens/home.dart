@@ -196,20 +196,43 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: 180,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius:  BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15),
+                      Stack(
+                        children: [
+                          Container(
+                            height: 180,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius:  BorderRadius.only(
+                                topLeft: Radius.circular(15),
+                                topRight: Radius.circular(15),
+                              ),
+                              image: DecorationImage(
+                                image: AssetImage(item['image']!),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                          image: DecorationImage(
-                            image: AssetImage(item['image']!),
-                            fit: BoxFit.cover,
+                          Positioned(
+                            top: 8,
+                            right: 8,
+                            child: Container(
+                              padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.teal,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child:  Text(
+                                '\$59.99',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
+
                       Padding(
                         padding:  EdgeInsets.all(8.0),
                         child: Text(
