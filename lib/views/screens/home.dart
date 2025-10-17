@@ -234,6 +234,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+
                         ],
                       ),
 
@@ -252,6 +253,17 @@ class HomeScreen extends StatelessWidget {
                         child: Text(
                           item['desc']!,
                           style: TextStyle(color: Colors.grey, fontSize: 13),
+                        ),
+                      ),
+                      Positioned(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 350,
+                            vertical: 4,
+                          ),
+
+                          child:
+                          Icon(Icons.favorite, color: Colors.teal,)
                         ),
                       ),
                       SizedBox(height: 10),
