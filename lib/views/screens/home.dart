@@ -13,6 +13,47 @@ class HomeScreen extends StatelessWidget{
           Icon(Icons.search)
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+             UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.teal),
+              accountName: Text('Hello, Student!'),
+              accountEmail: Text('flutter@example.com'),
+              currentAccountPicture: Icon(Icons.person_off),
+
+            ),
+
+            ListTile(
+              leading:  Icon(Icons.home, color: Colors.teal),
+              title:  Text('Home'),
+              
+            ),
+
+            ListTile(
+              leading:  Icon(Icons.shopping_cart, color: Colors.teal),
+              title:  Text('My Cart'),
+              
+            ),
+
+            ListTile(
+              leading:  Icon(Icons.favorite, color: Colors.teal),
+              title:  Text('Favorites'),
+              
+            ),
+
+            ListTile(
+              leading:  Icon(Icons.person, color: Colors.teal),
+              title:  Text('Profile'),
+              
+            ),
+
+
+
+          ],
+        ),
+      ),
     );
   }
 }
