@@ -65,8 +65,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body:
-      Column(
+      body: Column(
         children: [
           Container(
             color: Colors.teal[50],
@@ -261,7 +260,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.teal,
+        onPressed: () {  },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
