@@ -23,15 +23,15 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          Center(
-            child: Text(
-              "Login to your account",
-            ),
-          ),
+          Center(child: Text("Login to your account")),
           SizedBox(height: 50),
-          AppTextformfield(label: 'Email',),
+          AppTextformfield(label: 'Email'),
           SizedBox(height: 10),
-          AppTextformfield(label: 'Password',isPassword: true,icon: Icon(Icons.visibility_off),),
+          AppTextformfield(
+            label: 'Password',
+            isPassword: true,
+            icon: Icon(Icons.visibility_off),
+          ),
           SizedBox(height: 10),
           Align(
             alignment: Alignment.centerRight,
@@ -43,7 +43,25 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
+          const SizedBox(height: 10),
 
+          SizedBox(
+            width: 150,
+            height: 50,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                "Login",
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+            ),
+          ),
         ],
       ),
     );
