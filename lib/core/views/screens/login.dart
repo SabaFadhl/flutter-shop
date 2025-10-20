@@ -30,8 +30,20 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           SizedBox(height: 50),
           AppTextformfield(label: 'Email',),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           AppTextformfield(label: 'Password',isPassword: true,icon: Icon(Icons.visibility_off),),
+          SizedBox(height: 10),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text(
+                "Forgot Password?",
+                style: TextStyle(color: Colors.teal),
+              ),
+            ),
+          ),
+
         ],
       ),
     );
