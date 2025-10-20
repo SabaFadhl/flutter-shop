@@ -70,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const Text("Don't have an account? "),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "/register");
+                  },
                   child: const Text(
                     "Register",
                     style: TextStyle(
