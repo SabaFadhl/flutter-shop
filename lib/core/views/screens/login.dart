@@ -12,6 +12,22 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Login")),
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          Center(
+            child: Text(
+              "Welcome Back 👋",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Center(
+            child: Text(
+              "Login to your account",
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
