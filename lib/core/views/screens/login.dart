@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/app_textformfield.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -14,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(title: Text("Login")),
       body: Column(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 50),
           Center(
             child: Text(
               "Welcome Back 👋",
@@ -26,6 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
               "Login to your account",
             ),
           ),
+          SizedBox(height: 50),
+          AppTextformfield(label: 'Email',),
+          SizedBox(height: 20),
+          AppTextformfield(label: 'Password',isPassword: true,icon: Icon(Icons.visibility_off),),
         ],
       ),
     );
