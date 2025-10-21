@@ -26,6 +26,54 @@ class _ProductsScreenState extends State<ProductsScreen> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.teal,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(40),
+                ),
+              ),
+              accountName: Text(
+                'Hello, Romeo!',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              accountEmail: Text('spacetoon@example.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/icons/profile.jpg'),
+              ),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.home, color: Colors.teal),
+              title: Text('Home'),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.shopping_cart, color: Colors.teal),
+              title: Text('My Cart'),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.favorite, color: Colors.teal),
+              title: Text('Favorites'),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.person, color: Colors.teal),
+              title: Text('Profile'),
+            ),
+            Divider(height: 250, endIndent: 40, color: Colors.white),
+            ListTile(
+              leading: Icon(Icons.logout, color: Colors.red),
+              title: Text('Logout', style: TextStyle(color: Colors.red)),
+            ),
+          ],
+        ),
+      ),
       body: FutureBuilder(
         future: _productvm.getAllProducts(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
