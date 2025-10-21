@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginScreen(),
       debugShowCheckedModeBanner: false,
+      routes: {"/register": (ctx)=>HomeScreen()},
     );
   }
 }
