@@ -12,14 +12,11 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterState extends State<RegisterScreen> {
   var _image;
-
+  String? selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Register"),
-        leading: Icon(Icons.arrow_back),
-      ),
+      appBar: AppBar(title: Text("Register"), leading: Icon(Icons.arrow_back)),
       body: SingleChildScrollView(
         // padding: const EdgeInsets.all(16),
         child: Column(
@@ -52,20 +49,50 @@ class _RegisterState extends State<RegisterScreen> {
             Row(
               children: [
                 Container(
-                  child:
-                  AppDropdownformfield(label: "Code", items: ["+967", "+966", "+968", "+971", "+20"],)
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: AppTextformfield(
-                      label: "Phone",
+                  child: AppDropdownformfield(
+                    label: "Code",
+                    items: ["+967", "+966", "+968", "+971", "+20"],
                   ),
                 ),
+                const SizedBox(width: 10),
+                Expanded(child: AppTextformfield(label: "Phone")),
               ],
             ),
-            const SizedBox(height: 20),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
 
-
+                color: Colors.grey[100],
+              ),
+              child: Row(
+                children: [
+                  const Text(
+                    "Gender: ",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: RadioGroup(
+                      groupValue: selectedGender,
+                      onChanged: (x) {
+                        selectedGender = x;
+                        setState(() {});
+                      },
+                      child: Row(
+                        children: [
+                          Radio(value: "male"),
+                          Text("Male"),
+                          Radio(value: "female"),
+                          SizedBox(height: 20),
+                          Text("Female"),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
