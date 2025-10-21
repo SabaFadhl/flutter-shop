@@ -66,7 +66,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
               leading: Icon(Icons.person, color: Colors.teal),
               title: Text('Profile'),
             ),
-            Divider(height: 250, endIndent: 40, color: Colors.white),
+            Divider(height: 200, endIndent: 40, color: Colors.white),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.red),
               title: Text('Logout', style: TextStyle(color: Colors.red)),
