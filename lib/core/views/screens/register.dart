@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../components/app_dropdownformfield.dart';
 import '../components/app_textformfield.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -48,6 +49,22 @@ class _RegisterState extends State<RegisterScreen> {
               isPassword: true,
               icon: Icon(Icons.visibility_off),
             ),
+            Row(
+              children: [
+                Container(
+                  child:
+                  AppDropdownformfield(label: "Code", items: ["+967", "+966", "+968", "+971", "+20"],)
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: AppTextformfield(
+                      label: "Phone",
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+
 
           ],
         ),
