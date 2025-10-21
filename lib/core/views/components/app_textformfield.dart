@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppTextformfield extends StatelessWidget {
-  AppTextformfield({super.key, required this.label, this.filled=true, this.isPassword=false, this.icon});
+  AppTextformfield({super.key, required this.label, this.filled=true, this.isPassword=false, this.icon, this.horizontal=15});
   String label;
   bool filled;
   bool isPassword;
   Widget? icon;
+  double horizontal;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
+      margin: EdgeInsets.symmetric(horizontal: horizontal,vertical: 10),
       child: TextFormField(
         obscureText: isPassword,
         decoration: InputDecoration(
@@ -18,7 +19,7 @@ class AppTextformfield extends StatelessWidget {
           filled: true,
           fillColor: filled ?Colors.grey[100]:null,
           border: OutlineInputBorder(
-
+            // borderSide: BorderSide(color: Colors.teal, style: BorderStyle.solid, width: 55),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
