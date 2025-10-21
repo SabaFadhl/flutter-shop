@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/app_textformfield.dart';
+
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -18,10 +20,12 @@ class _RegisterState extends State<RegisterScreen> {
         leading: Icon(Icons.arrow_back),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        // padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(height: 10),
+
             Center(
               child: CircleAvatar(
                 radius: 50,
@@ -32,7 +36,20 @@ class _RegisterState extends State<RegisterScreen> {
                     : null,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(child: AppTextformfield(label: 'Name')),
+                Expanded(child: AppTextformfield(label: 'Surname')),
+              ],
+            ),
+            AppTextformfield(label: 'Email'),
+            SizedBox(height: 10),
+            AppTextformfield(
+              label: 'Password',
+              isPassword: true,
+              icon: Icon(Icons.visibility_off),
+            ),
 
           ],
         ),
