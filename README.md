@@ -69,8 +69,8 @@ flutter run
 
 ## 🖼️ Screenshots
 
+[spacetoon shop.webm](https://github.com/user-attachments/assets/a61ed156-0d4c-4ec0-8859-8cc5128f17d9)
 
-https://github.com/user-attachments/assets/bb1f5983-f203-4de2-a8cd-dd0e64b36ea4
 
 
 
