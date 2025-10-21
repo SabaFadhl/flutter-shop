@@ -36,7 +36,6 @@ class _RegisterState extends State<RegisterScreen> {
                     : null,
               ),
             ),
-            const SizedBox(height: 10),
             Row(
               children: [
                 Expanded(child: AppTextformfield(label: 'Name')),
@@ -44,7 +43,6 @@ class _RegisterState extends State<RegisterScreen> {
               ],
             ),
             AppTextformfield(label: 'Email'),
-            SizedBox(height: 10),
             AppTextformfield(
               label: 'Password',
               isPassword: true,
