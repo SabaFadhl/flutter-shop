@@ -13,6 +13,19 @@ class _ProductsScreenState extends State<ProductsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 1,
+        title: Text('Spacetoon Shop'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.teal,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: Icon(Icons.search),
+          ),
+        ],
+      ),
       body: FutureBuilder(
         future: _productvm.getAllProducts(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
