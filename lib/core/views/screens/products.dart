@@ -20,6 +20,8 @@ class _ProductsScreenState extends State<ProductsScreen> {
 
             return ListView.builder(
                 itemCount: snapshot.data.length,
+                scrollDirection: Axis.vertical,
+                padding: EdgeInsets.all(10),
                 itemBuilder: (ctx, index){
               return Column(
                 children: [
@@ -112,6 +114,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                   ],
                   ),
                   ),
+                  SizedBox(height: 30,)
                 ],
               );
             }
