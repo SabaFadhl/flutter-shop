@@ -15,7 +15,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
-        title: Text('Spacetoon Shop'),
+        title: Text('Products'),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.teal,
