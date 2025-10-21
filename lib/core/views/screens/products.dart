@@ -51,7 +51,13 @@ class _ProductsScreenState extends State<ProductsScreen> {
               leading: Icon(Icons.home, color: Colors.teal),
               title: Text('Home'),
             ),
-
+            ListTile(
+                onTap: (){
+                  Navigator.pushNamed(context, "/login");
+                },
+              leading: Icon(Icons.login, color: Colors.teal),
+              title: Text('Login'),
+            ),
             ListTile(
               leading: Icon(Icons.shopping_cart, color: Colors.teal),
               title: Text('My Cart'),
@@ -66,7 +72,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
               leading: Icon(Icons.person, color: Colors.teal),
               title: Text('Profile'),
             ),
-            Divider(height: 200, endIndent: 40, color: Colors.white),
+            Divider(height: 180, endIndent: 40, color: Colors.white),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.red),
               title: Text('Logout', style: TextStyle(color: Colors.red)),
