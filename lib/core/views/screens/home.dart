@@ -96,6 +96,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Spacer(),
                 Icon(Icons.notifications_none, color: Colors.teal),
+
               ],
             ),
           ),
