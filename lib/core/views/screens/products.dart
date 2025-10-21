@@ -1,0 +1,129 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_shop/core/viewmodel/productvm.dart';
+
+class ProductsScreen extends StatefulWidget {
+  const ProductsScreen({super.key});
+
+  @override
+  State<ProductsScreen> createState() => _ProductsScreenState();
+}
+
+class _ProductsScreenState extends State<ProductsScreen> {
+  ProductVM _productvm= ProductVM();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: FutureBuilder(
+        future: _productvm.getAllProducts(),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          if(snapshot.hasData){
+
+            return ListView.builder(
+                itemCount: snapshot.data.length,
+                itemBuilder: (ctx, index){
+              return Column(
+                children: [
+              Container(
+              decoration: BoxDecoration(
+              color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    blurRadius: 8,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+                  child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  Stack(
+                  children: [
+                  Container(
+                  height: 180,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                  ),
+                  image: DecorationImage(
+                  image: NetworkImage(snapshot.data[index].thumbnail!),
+                  fit: BoxFit.cover,
+                  ),
+                  ),
+                  ),
+                  Positioned(
+                  top: 8,
+                  right: 8,
+                  child: Container(
+                  padding: EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+
+                    snapshot.data[index].price.toString(),
+                  style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  ),
+                  ),
+                  ),
+                  ),
+
+                  ],
+                  ),
+
+                  Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                  snapshot.data[index].title!,
+                  style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  ),
+                  ),
+                  ),
+                  Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                  snapshot.data[index].description!,
+                  style: TextStyle(color: Colors.grey, fontSize: 13),
+                  ),
+                  ),
+                  Positioned(
+                  child: Container(
+                  padding: EdgeInsets.symmetric(
+                  horizontal: 350,
+                  vertical: 4,
+                  ),
+
+                  child:
+                  Icon(Icons.favorite, color: Colors.teal,)
+                  ),
+                  ),
+                  SizedBox(height: 10),
+                  ],
+                  ),
+                  ),
+                ],
+              );
+            }
+            );
+          }
+          else {
+            return Center(child: Text("loading"));
+          }
+        },
+
+      ),
+
+    );
+  }
+}
