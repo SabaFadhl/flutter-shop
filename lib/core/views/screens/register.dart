@@ -1,3 +1,4 @@
+import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 
 import '../components/app_dropdownformfield.dart';
@@ -13,6 +14,10 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterState extends State<RegisterScreen> {
   var _image;
   String? selectedGender;
+  DateTime? selectedDate;
+  DateTime? selectedTime;
+  DateTime? selectedDateTime;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +97,23 @@ class _RegisterState extends State<RegisterScreen> {
                   ),
                 ],
               ),
+
+            ),
+            DateTimeField(
+              decoration: InputDecoration(
+                labelText: 'Select Birthdate',
+                filled: true,
+                fillColor: Colors.grey[100],
+              ),
+              value: selectedDate,
+              lastDate: DateTime.now(),
+              mode: DateTimeFieldPickerMode.date,
+              initialPickerDateTime: DateTime.now(),
+              onChanged: (DateTime? value) {
+                setState(() {
+                  selectedDate = value;
+                });
+              },
             ),
           ],
         ),
