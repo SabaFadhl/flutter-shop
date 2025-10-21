@@ -115,6 +115,28 @@ class _RegisterState extends State<RegisterScreen> {
                 });
               },
             ),
+            SizedBox(height: 10,),
+            AppDropdownformfield(
+              label: "City",
+              items: ["Sana", "Aden", "TAiz"],
+            ),
+            SizedBox(
+              width: 150,
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: const Text(
+                  "Register",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),
